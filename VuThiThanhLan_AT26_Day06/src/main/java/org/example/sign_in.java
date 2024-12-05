@@ -34,7 +34,9 @@ public class sign_in {
 
     }
     @AfterMethod
-    public void cleanUp(){}
+    public void cleanUp(){
+        driver.quit();
+    }
 
     private void sleep(int time){
         try {
