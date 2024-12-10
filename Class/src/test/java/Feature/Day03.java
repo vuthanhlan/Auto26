@@ -9,7 +9,7 @@ public class Day03 {
     static ChromeDriver driver;
     private static RequestDemoPageUI loginPageUI = null;
 
-    public void Day08(RequestDemoPageUI loginPageUI) {
+    public void Day03(RequestDemoPageUI loginPageUI) {
         Day03.loginPageUI = loginPageUI;
     }
 
@@ -18,11 +18,15 @@ public class Day03 {
         driver.manage().window().maximize();
 //        driver.get("https://saucelabs.com/request-demo");
 //        Thread.sleep(2000);
-        driver.get("https://saucelabs.com/request-demo");
+        driver.get("https://demo.guru99.com/test/upload/");
 //        String getUrl = driver.getCurrentUrl();
 //        System.out.println("Đường dẫn web là: "+getUrl);
 
-        WebElement inputEmail = driver.findElement(By.id("Email"));
+//        WebElement inputEmail = driver.findElement(By.id("Email"));
+//        inputEmail.sendKeys("saucelabs@gmail.com");
+//        Thread.sleep(2000);
+////        inputEmail.clear();
+//        inputEmail.isEnabled();
 
 //        WebElement btn_TryItFree = driver.findElement(By.linkText("Try it free"));
 //        WebElement btn_TryItFree = driver.findElement(By.partialLinkText("Try"));
@@ -47,8 +51,16 @@ public class Day03 {
 //        }
 
         //Tìm phần ử theo CSS Selector: input có name là "Email"
-        WebElement emailInput = driver.findElement(By.cssSelector("input[name='Email'"));
-        inputEmail.sendKeys("thanhlan@gmail.com");
+//        WebElement emailInput = driver.findElement(By.cssSelector("input[name='Email'"));
+//        inputEmail.sendKeys("thanhlan@gmail.com");
+
+
+        String filePath = "D:/doc";
+
+        WebElement uploadFiled = driver.findElement(By.id("uploadfile_0"));
+        uploadFiled.sendKeys(filePath);
+
+
     }
 }
 //Một số CSS Selector phổ biến:
