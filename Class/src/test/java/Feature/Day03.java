@@ -60,7 +60,7 @@ public class Day03 {
         WebElement uploadFiled = driver.findElement(By.id("uploadfile_0"));
         uploadFiled.sendKeys(filePath);
 
-    fjjf
+
     }
 }
 //Một số CSS Selector phổ biến:

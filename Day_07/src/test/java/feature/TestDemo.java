@@ -22,7 +22,7 @@ public class TestDemo {
         // Sử dụng requestDemoPageUI
         testDemo.requestDemoPageUI.findTexBoxBusinessEmail().sendKeys("thanhlan05@gmail.com");
         Thread.sleep(1000);
-        testDemo.requestDemoPageUI.findTexBoxCompany().sendKeys("Techcombank");
+            testDemo.requestDemoPageUI.findTexBoxCompany().sendKeys("Techcombank");
         Thread.sleep(1000);
 
         testDemo.requestDemoPageUI.findTexBoxPhone().sendKeys("0357894512");
