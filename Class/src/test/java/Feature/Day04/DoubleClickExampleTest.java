@@ -24,7 +24,7 @@ public class DoubleClickExampleTest {
         actions.doubleClick(button).perform();
         Thread.sleep(1000);
 
-
+dd
 
         String alertText = driver.switchTo().alert().getText();
         System.out.println("Alert text after double click: "+alertText);
