@@ -24,5 +24,7 @@ public class MultiCheckBoxSelectionTest {
             checkbox.click(); //Chọn checkbox
             System.out.println(checkbox.getAttribute("value"));
         }
+        driver.quit();
+
     }
 }
