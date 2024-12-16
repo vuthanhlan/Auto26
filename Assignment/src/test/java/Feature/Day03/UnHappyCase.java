@@ -1,10 +1,8 @@
-package Feature.Day08;
+package Feature.Day03;
 
 import UI.RequestDemoPageUI;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class UnHappyCase {
     private WebDriver driver;
