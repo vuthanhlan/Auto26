@@ -20,7 +20,6 @@ public class Sign_in_RequestDemo {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS) ;
-
         try{
             for (Map<String, String> rowData : excelData) {
                 driver.get("https://saucelabs.com/request-demo");
@@ -34,48 +33,34 @@ public class Sign_in_RequestDemo {
                 String comment = rowData.get("Comments");
 
                 RequestDemoPageUI requestDemoPageUI = new RequestDemoPageUI(driver);
-
                 //Nhập email
                 requestDemoPageUI.findTexBoxBusinessEmail().sendKeys(email);
-
                 //Nhập first name
                 requestDemoPageUI.findTexBoxFirstName().sendKeys(firstName);
-
                 //Nhập last name
                 requestDemoPageUI.findTexBoxLastName().sendKeys(lastName);
-
                 //Nhập company
                 requestDemoPageUI.findTexBoxCompany().sendKeys(company);
-
                 //Nhập phone
                 requestDemoPageUI.findTexBoxPhone().sendKeys(phone);
-
                 //Nhập county
                 WebElement Country = requestDemoPageUI.findTexBoxCountry();
                 Select countrySelect = new Select(Country);
                 countrySelect.selectByVisibleText(country);
-
                 //Nhập interest
                 WebElement inter = requestDemoPageUI.findTexBoxInterest();
                 Select select = new Select(inter);
                 select.selectByVisibleText(Interest);
-
                 //Nhập comment
                 requestDemoPageUI.findTexBoxComment().sendKeys(comment);
                 //Tích chọn
                 requestDemoPageUI.findCheckBox().click();
-
-
                 //Click button Lets talk
                 requestDemoPageUI.findButtonLetsTalk().click();
-
             }
-
         }
         catch(Exception e){
-
         }
          driver.quit();
-
     }
 }

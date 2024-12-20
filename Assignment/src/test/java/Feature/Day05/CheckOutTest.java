@@ -28,7 +28,7 @@ public class CheckOutTest {
         Login();
         addItiemButton();
         checkout();
-
+        driver.quit();
 
     }
 
