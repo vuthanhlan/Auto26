@@ -65,6 +65,7 @@ public class Sign_in_RequestDemo {
                 //Tích chọn
                 requestDemoPageUI.findCheckBox().click();
 
+
                 //Click button Lets talk
                 requestDemoPageUI.findButtonLetsTalk().click();
 
