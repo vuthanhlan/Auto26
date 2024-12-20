@@ -75,7 +75,7 @@ public class Sign_in_RequestDemo {
         catch(Exception e){
 
         }
-
+         driver.quit();
 
     }
 }
