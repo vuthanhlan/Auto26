@@ -18,14 +18,22 @@ public class RequestDemoPageUI {
     public WebElement findTexBoxBusinessEmail() {
         return driver.findElement(By.xpath("//input[contains(@id,'Email')]"));
     }
-
+    public WebElement findTexBoxFirstName() {
+        return driver.findElement(By.xpath("//input[contains(@id,'FirstName')]"));
+    }
+    public WebElement findTexBoxLastName() {
+        return driver.findElement(By.xpath("//input[contains(@id,'LastName')]"));
+    }
     public WebElement findTexBoxCompany() {
         return driver.findElement(By.xpath("//input[contains(@id,'Company')]"));
     }
+
     public WebElement findTexBoxPhone() {
         return driver.findElement(By.xpath("//input[contains(@id,'Phone')]"));
     }
-
+    public WebElement findTexBoxCountry() {
+        return driver.findElement(By.xpath("//select[contains(@id,'Country')]"));
+    }
 
     public WebElement findTexBoxInterest() {
         return driver.findElement(By.xpath("//select[contains(@id,'Solution')]"));
