@@ -60,8 +60,4 @@ public class ExcelUntils {
         }
         return data;
     }
-
-    public static String closeFile(String filePath) {
-        return filePath;
-    }
 }
