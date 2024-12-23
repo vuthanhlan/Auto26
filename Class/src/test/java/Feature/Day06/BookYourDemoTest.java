@@ -18,7 +18,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class BookYourDemoTest {
+public class    BookYourDemoTest {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -27,7 +27,7 @@ public class BookYourDemoTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://saucelabs.com/request-demo/");
     }
 
@@ -49,6 +49,7 @@ public class BookYourDemoTest {
 
     @Test(dataProvider = "demoData")
     public void testRequestDemoSuccess(Map<String, String> rowData) {
+
         String businessEmail = rowData.get("Business Email"); //Lấy giá trị cột Business Email
         String firstName = rowData.get("First Name");
         String lastName = rowData.get("Last Name");
@@ -80,7 +81,66 @@ public class BookYourDemoTest {
                 "example@yourdomain.com", "Error message does not match " +
                 "expected.");
     }
+    @Test(dataProvider = "demoData")
+    public void testFirstNameNull(Map<String, String> rowData) {
+        String businessEmail = rowData.get("Business Email"); //Lấy giá trị cột Business Email
+        String firstName = rowData.get("First Name");
+        String lastName = rowData.get("Last Name");
+        String company = rowData.get("Company");
+        String phoneNumber = rowData.get("Phone Number");
+        String country = rowData.get("Country");
+        String interest = rowData.get("Interest");
+        String comments = rowData.get("Comments");
+//nhap du lieu
+        driver.findElement(By.id("Email")).sendKeys(businessEmail);
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("LastName"))).sendKeys(lastName);
+        driver.findElement(By.id("Company")).sendKeys(company);
+        driver.findElement(By.id("Phone")).sendKeys(phoneNumber);
+        WebElement countryDropdownList = driver.findElement(By.id("Country"));
+        new Select(countryDropdownList).selectByVisibleText(country);
+        WebElement interestDropdownList = driver.findElement(By.id("Solution_Interest__c"));
+        new Select(interestDropdownList).selectByVisibleText(interest);
+        driver.findElement(By.id("Sales_Contact_Comments__c")).sendKeys(comments);
+        driver.findElement(By.id("LblmktoCheckbox_44280_0")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'This field is required.')]")));
+        String actualMessage = errorMessage.getText();
+        Assert.assertEquals(actualMessage, "This field is required.", "Error message does not match " +
+                "expected.");
+    }
+
+    @Test(dataProvider = "demoData")
+    public void testLastNameNull(Map<String, String> rowData) {
+
+        String businessEmail = rowData.get("Business Email"); //Lấy giá trị cột Business Email
+        String firstName = rowData.get("First Name");
+        String lastName = rowData.get("Last Name");
+        String company = rowData.get("Company");
+        String phoneNumber = rowData.get("Phone Number");
+        String country = rowData.get("Country");
+        String interest = rowData.get("Interest");
+        String comments = rowData.get("Comments");
+//nhap du lieu
+        driver.findElement(By.id("Email")).sendKeys(businessEmail);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("FirstName"))).sendKeys(firstName);
+
+        driver.findElement(By.id("Company")).sendKeys(company);
+        driver.findElement(By.id("Phone")).sendKeys(phoneNumber);
+        WebElement countryDropdownList = driver.findElement(By.id("Country"));
+        new Select(countryDropdownList).selectByVisibleText(country);
+        WebElement interestDropdownList = driver.findElement(By.id("Solution_Interest__c"));
+        new Select(interestDropdownList).selectByVisibleText(interest);
+        driver.findElement(By.id("Sales_Contact_Comments__c")).sendKeys(comments);
+        driver.findElement(By.id("LblmktoCheckbox_44280_0")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'This field is required.')]")));
+        String actualMessage = errorMessage.getText();
+        Assert.assertEquals(actualMessage, "This field is required.", "Error message does not match " +
+                "expected.");
+    }
     @AfterTest
     public void tearDown() {
         driver.quit();
