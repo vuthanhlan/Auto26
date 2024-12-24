@@ -9,10 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 import java.util.List;
@@ -23,11 +20,14 @@ public class    BookYourDemoTest {
     WebDriver driver;
     WebDriverWait wait;
 
-    @BeforeTest
+    @BeforeClass
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+    }
+    @BeforeMethod
+    public void setUrl() {
         driver.get("https://saucelabs.com/request-demo/");
     }
 
@@ -141,9 +141,11 @@ public class    BookYourDemoTest {
         Assert.assertEquals(actualMessage, "This field is required.", "Error message does not match " +
                 "expected.");
     }
-    @AfterTest
+    @AfterClass
     public void tearDown() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
 //String businessEmail = rowData.get(0).get("Business Email");
