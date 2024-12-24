@@ -105,7 +105,7 @@ public class    BookYourDemoTest {
         driver.findElement(By.id("LblmktoCheckbox_44280_0")).click();
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'This field is required.')]")));
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@id,'ValidMsgFirstName')]")));
         String actualMessage = errorMessage.getText();
         Assert.assertEquals(actualMessage, "This field is required.", "Error message does not match " +
                 "expected.");
@@ -136,7 +136,7 @@ public class    BookYourDemoTest {
         driver.findElement(By.id("LblmktoCheckbox_44280_0")).click();
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'This field is required.')]")));
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@id,'ValidMsgLastName')]")));
         String actualMessage = errorMessage.getText();
         Assert.assertEquals(actualMessage, "This field is required.", "Error message does not match " +
                 "expected.");
