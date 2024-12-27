@@ -1,9 +1,7 @@
-package Feature.Day07;
+package feature.day07;
 
 import UI.LoginPageUI;
-import Untils.ExcelUntils;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,10 +13,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.List;
-import java.util.Map;
 
-public class testDemo {
+public class TestDemo {
     WebDriver driver;
     WebDriverWait wait;
     LoginPageUI loginPageUI;

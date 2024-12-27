@@ -1,11 +1,10 @@
-package Feature.Day04;
+package feature.day04;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class JavaScriptExcutorExampleTest {
     public static void main(String[] args) throws InterruptedException {

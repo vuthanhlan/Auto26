@@ -1,4 +1,4 @@
-package Feature;
+package feature.day03;
 
 import UI.RequestDemoPageUI;
 import org.openqa.selenium.By;

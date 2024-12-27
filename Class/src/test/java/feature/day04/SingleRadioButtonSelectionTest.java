@@ -1,4 +1,4 @@
-package Feature.Day04;
+package feature.day04;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +10,7 @@ public class SingleRadioButtonSelectionTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://demo.guru99.com/test/radio.html");
-        WebElement radioButton = driver.findElement(By.id("vfb-7-2"));
+        WebElement radioButton = driver.findElement(By.id("vfb-7-1"));
         radioButton.click();
         Thread.sleep(1000);
 

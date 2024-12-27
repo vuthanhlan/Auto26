@@ -1,4 +1,4 @@
-package Feature.Day06;
+package feature.day06;
 
 import Untils.ExcelUntils;
 import org.junit.Assert;
